@@ -1,0 +1,13 @@
+[{
+    "type": "message",
+    "id": "dropdownCaption",
+    "value": "Please select your Airport code, which you want to show on the screen from the List:"
+},
+    {
+    "type": "dropdown",
+    "id": "iataCodeCity",
+    "caption": "Airpots Code",
+    "list": ["WAW", "BCN", "BER", "KE", "DEL"],
+    "value": "WAW"
+}
+]

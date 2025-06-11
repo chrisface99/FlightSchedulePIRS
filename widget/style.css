@@ -1,0 +1,250 @@
+@font-face {
+  font-family: "SamsungRegular";
+  src: url("./fonts/SamsungSharpSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SamsungMedium";
+  src: url("./fonts/SamsungSharpSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SamsungBold";
+  src: url("./fonts/SamsungSharpSans-Bold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SamsungRegular", Arial, sans-serif;
+  background-color: #1c222c;
+  color: #fff;
+  overflow: hidden; /* Prevent scrollbars on the body */
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  height: 10%; 
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+#airport-code {
+  font-family: "SamsungBold", Arial, sans-serif;
+  font-size: 2.5vw; 
+  color: #ffd700;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#current-time {
+  font-family: "SamsungBold", Arial, sans-serif;
+  font-size: 2.5vw; 
+}
+
+#date-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 1.2vw; 
+  color: #8a8a8a;
+}
+
+#current-day {
+  font-family: "SamsungMedium", Arial, sans-serif;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.weather-display {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather-icon {
+  font-size: 2vw; 
+}
+
+#current-temp {
+  font-family: "SamsungBold", Arial, sans-serif;
+  font-size: 2vw; 
+}
+
+#weather-condition {
+  font-size: 1.2vw; 
+  color: #8a8a8a;
+}
+
+main {
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: scroll; /* Allow vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+main::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+.flights-container {
+  display: flex;
+  width: 100%;
+}
+
+.flight-section {
+  flex: 1;
+  padding: 1vw; 
+}
+
+#departures-section {
+  background-color: #1c222c;
+}
+
+#arrivals-section {
+  background-color: #252d3b;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vw; 
+  gap: 1vw; 
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 0.5vw; 
+}
+
+.flight-icon {
+  font-size: 2vw; 
+  color: #ffd700;
+}
+
+#arrivals-section .flight-icon {
+  transform: rotate(90deg);
+}
+
+h2 {
+  font-family: "SamsungBold", Arial, sans-serif;
+  font-size: 2vw; 
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-family: "SamsungMedium", Arial, sans-serif;
+  text-align: left;
+  padding: 0.5vw; 
+  color: #8a8a8a;
+  font-size: 1.2vw; 
+  border-bottom: 1px solid #333;
+}
+
+tbody tr {
+  height: calc((100vh - 10% - 5%) / 12); 
+  border-radius: 10px;
+  margin-bottom: 0.5vw;
+}
+
+#departure-table tbody tr {
+  background-color: #111419;
+}
+
+#arrival-table tbody tr {
+  background-color: #1e2633;
+}
+
+td {
+  padding: 0.5vw; 
+  font-size: 1.2vw;
+}
+
+/* Gate styling */
+td:nth-child(4) {
+  font-family: "SamsungBold", Arial, sans-serif;
+  color: #ffd700;
+}
+
+.on-time {
+  color: #fff;
+}
+
+.boarding {
+  color: #4CAF50;
+}
+
+.delayed {
+  color: #FF9800;
+}
+
+.cancelled {
+  color: #F44336;
+}
+
+.airline-icon {
+  width: 4vw; 
+  height: 1.5vw; 
+  margin-right: 0.5vw; 
+  vertical-align: middle;
+}
+
+#ticker {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%; 
+  background-color: #000;
+  color: #ffd700;
+  font-family: "SamsungBold", Arial, sans-serif;
+  font-size: 1.5vw; 
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+#ticker-text {
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: none; 
+}
